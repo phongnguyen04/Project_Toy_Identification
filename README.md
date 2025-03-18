@@ -310,7 +310,7 @@
 <h2 align="center">🌟 Poster ✨</h2>
 <p align="center"><strong>Poster nhóm</strong></p>
 <div align="center">
-  <img src="REAME/PosterNhom7.pptx" alt="Poster nhóm" width="100%">
+  <img src="./REAME/poster.jpg" alt="Poster nhóm" width="100%">
 </div>
 
 <br>
