@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 5
+names: ['Car', 'Panda', 'Rabbit', 'Teddy', 'stick']
+
+roboflow:
+  workspace: khn-5yynf
+  project: toys-2tj0f
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/khn-5yynf/toys-2tj0f/dataset/1

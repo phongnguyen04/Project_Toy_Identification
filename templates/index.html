@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhận diện đồ chơi - YOLO</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        img {
+            border: 2px solid white;
+            margin-top: 10px;
+        }
+        #alert {
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            display: none; /* Mặc định ẩn đi */
+        }
+        .safe {
+            color: green;
+        }
+        .danger {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hệ Thống Nhận Diện Hoa Quả</h1>
+    <img src="{{ url_for('video_feed') }}" width="640" height="480">
+    
+    <!-- Vùng hiển thị cảnh báo -->
+    <div id="alert">Cảnh báo: Hoa quả hỏng được phát hiện! </div>
+
+    <script>
+        function checkAlert() {
+            fetch('/alert_status')
+                .then(response => response.json())
+                .then(data => {
+                    let alertDiv = document.getElementById("alert");
+                    if (data.alert) {
+                        alertDiv.innerHTML = " " + data.message + " ";
+                        alertDiv.className = "danger";
+                        alertDiv.style.display = "block";
+                    } else {
+                        alertDiv.innerHTML = " Không phát hiện hoa quả hỏng";
+                        alertDiv.className = "safe";
+                        alertDiv.style.display = "block";
+                    }
+                });
+        }
+
+        setInterval(checkAlert, 1000); // Kiểm tra cảnh báo mỗi giây
+    </script>
+</body>
+</html>
