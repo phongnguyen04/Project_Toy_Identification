@@ -26,7 +26,7 @@
 
 <h2 align="center">🚀 Cấu trúc dự án</h2>
 <pre>
-📂 Nghien_cuu_phan_loai_HQ
+📂 Nghien_cuu_phan_loai_DCDC
 ├── 📸 anhcam/                   # Thư mục lưu trữ hình ảnh từ camera
 ├── 🔌 PhanCung/                  
 │   ├── ⚙️ BTL.ino               # Arduino code cho phần cứng
